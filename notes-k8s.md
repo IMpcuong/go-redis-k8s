@@ -34,3 +34,15 @@ minikube start
 export http_proxy="http://<IP_Adress>:<Port>"
 export https_proxy="http://<IP_Adress>:<Port>"
 ```
+
+- NOTE: Whenever you have to face against this error `Unable to restart cluster, will reset it: apiserver healthz: apiserver process never appeared`, please following this advices step by step as below:
+
+```bash
+minikube delete
+
+minikube start --v=5 # Or higher.
+
+kubectl config use-context minikube
+
+kubectl get pods --context=minikube
+```
