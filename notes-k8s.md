@@ -15,6 +15,7 @@ net start com.docker.service
 - To make `docker` as the default driver for `minikube`, then start a cluster using the `docker` driver:
 
 ```bash
+# NOTE: `minikube config set driver vmware/virtualbox`
 minikube config set driver docker
 minikube start --driver=docker
 ```
@@ -40,7 +41,7 @@ export https_proxy="http://<IP_Adress>:<Port>"
 ```bash
 minikube delete
 
-minikube start --v=5 # Or higher.
+minikube start --v=7 --alsologtostderr # Or higher.
 
 kubectl config use-context minikube
 
