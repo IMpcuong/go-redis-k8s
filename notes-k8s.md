@@ -26,4 +26,11 @@ minikube start
 ```
 
 - FIXME: `Pulling base image ...` -> `The image 'k8s.gcr.io/kube-proxy:v1.24.1' was not found; unable to add it to cache.`
--> Maybe you need to using `gcloud` - the Google CLoud CLI to access the remote container registry.
+  -> Maybe you need to using `gcloud` - the Google CLoud CLI to access the remote container registry.
+
+- Solution: If your machine stands behine the firewall/proxy server ---> You need to configure ad below:
+
+```bash
+export http_proxy="http://<IP_Adress>:<Port>"
+export https_proxy="http://<IP_Adress>:<Port>"
+```
